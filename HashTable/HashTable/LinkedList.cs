@@ -8,20 +8,20 @@ namespace HashTable
 {
     class LinkedList<K, V> where K : IComparable
     {
-       
+
         public MyMapNode<K, V> head;
         public MyMapNode<K, V> tail;
 
-        public LinkedList()                             
+        public LinkedList()
         {
             head = null;
             tail = null;
         }
-        public MyMapNode<K, V> Search(K key)            
+        public MyMapNode<K, V> Search(K key)
         {
-           
-            MyMapNode<K, V> temp = head;               
-            while (temp != null)                       
+
+            MyMapNode<K, V> temp = head;
+            while (temp != null)
             {
                 if (temp.key.Equals(key))
                     return temp;
@@ -31,15 +31,15 @@ namespace HashTable
         }
         public void Append(MyMapNode<K, V> node)
         {
-                      
-            if (head == null && tail == null)           
+
+            if (head == null && tail == null)
             {
                 head = node;
                 tail = node;
             }
             else
             {
-               
+
                 tail.next = node;
                 tail = node;
             }
@@ -51,11 +51,11 @@ namespace HashTable
 
         public MyMapNode<K, V> Pop()
         {
-          
+
             MyMapNode<K, V> temp = head;
             if (head != null)
             {
-                
+
                 head = head.next;
             }
             return temp;
@@ -66,11 +66,11 @@ namespace HashTable
             MyMapNode<K, V> tailTemp = tail;
             if (!IsEmpty())
             {
-            
+
                 MyMapNode<K, V> temp = head;
                 while (temp.next != tail)
                 {
-                   
+
                     temp = temp.next;
                 }
 
@@ -86,13 +86,13 @@ namespace HashTable
             MyMapNode<K, V> temp = head;
             if (!IsEmpty())
             {
-                
+
                 if (DeleteNode.key.Equals(head.key))
                 {
                     Pop();
                     return true;
                 }
-             
+
                 if (DeleteNode.key.Equals(tail.key))
                 {
                     PopLast();
@@ -100,7 +100,7 @@ namespace HashTable
                 }
                 while (temp != null)
                 {
-                    
+
                     if (temp.next != null && temp.next.key.Equals(DeleteNode.key))
                     {
                         temp.next = DeleteNode.next;

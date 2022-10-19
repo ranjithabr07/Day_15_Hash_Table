@@ -12,11 +12,11 @@ namespace HashTable
         public V value;
         public MyMapNode<K, V> next;
 
-        public MyMapNode(K key, V value)            
+        public MyMapNode(K key, V value)
         {
             this.key = key;
             this.value = value;
-            next = null;                           
+            next = null;
         }
     }
 
